@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import ErrorDashboard from './ErrorDashboard';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FrontPage from './components/FrontPage';
+import ErrorDetailsPage from './components/ErrorDetailsPage';
 
 function App() {
   return (
-    <div className="App">
-     <ErrorDashboard />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<FrontPage />} />
+        <Route path="/error-details-page/:id"  element={<ErrorDetailsPage />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -121,9 +121,10 @@ const FrontPage = () => {
                         <table className="error-table">
                             <thead>
                                 <tr>
-                                    <th>UTC TIME</th>
-                                    <th>LOCAL TIME</th>
-                                    <th>URL</th>
+                                    <th>UTC Time</th>
+                                    <th>Local Time</th>
+                                    <th>Api Url</th>
+                                    <th>Status Code</th>
                                     <th>Method</th>
                                     <th>Status Message</th>
                                 </tr>
@@ -134,6 +135,7 @@ const FrontPage = () => {
                                         <td>{item.created_at}</td>
                                         <td>{new Date(item.created_at).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</td>
                                         <td>{item.request_url}</td>
+                                        <td>{item.status_code}</td>
                                         <td>{item.method}</td>
                                         <td>{item.status_message}</td>
                                     </tr>
@@ -171,17 +173,7 @@ const FrontPage = () => {
                     </div>
                 )}
 
-                {/* {showCard && selectedErrorDetails && (
-                    <div className="error-details-card" >
-                        <h3>Error Details</h3>
-                        <p><strong>UTC TIME:</strong> {selectedErrorDetails.created_at}</p>
-                        <p><strong>LOCAL TIME:</strong> {new Date(selectedErrorDetails.created_at).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
-                        <p><strong>URL:</strong> {selectedErrorDetails.request_url}</p>
-                        <p><strong>Method:</strong> {selectedErrorDetails.method}</p>
-                        <p><strong>Status Message:</strong> {selectedErrorDetails.status_message}</p>
-                        <button onClick={handleCloseCard}>Close</button>
-                    </div>
-                )} */}
+               
             </div>
         </div>
     );
